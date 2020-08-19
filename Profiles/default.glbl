@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalVariableEntities>
+   <description></description>
+   <name>default</name>
+   <tag></tag>
+   <defaultProfile>true</defaultProfile>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'https://analytics.lentils.pzt.dev.perfsec.com/login/admin'</initValue>
+      <name>URL</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'admindb'</initValue>
+      <name>username</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'dana123'</initValue>
+      <name>password</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'IN'</initValue>
+      <name>countryISOCode</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'Alex1'</initValue>
+      <name>username1</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'US'</initValue>
+      <name>countryCode</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'http://elastic:mr69pcc8nn2tpgvnsnztdcf5@localhost:9200/'</initValue>
+      <name>ElasticURL</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'TopBusyUsers'</initValue>
+      <name>type</name>
+   </GlobalVariableEntity>
+</GlobalVariableEntities>
