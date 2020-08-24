@@ -14,23 +14,9 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
-import org.openqa.selenium.Keys as Keys
+import com.kms.katalon.core.configuration.RunConfiguration
 
-WebUI.openBrowser('')
+//def test1 = "/Users/maitri.brahmakshatriya/Downloads/simply.py"
+//Runtime.getRuntime().exec(test1)
 
-WebUI.maximizeWindow()
-
-WebUI.navigateToUrl(GlobalVariable.URL)
-
-WebUI.setText(findTestObject('Page_Pulse Zero Trust Access/input_Username_username'), GlobalVariable.username)
-
-WebUI.setText(findTestObject('Page_Pulse Zero Trust Access/input_Password_password'), GlobalVariable.password)
-
-WebUI.sendKeys(findTestObject('Object Repository/Page_Pulse Zero Trust Access/input_Password_password'), Keys.chord(Keys.ENTER))
-
-WebUI.click(findTestObject('Page_Pulse Zero Trust Access/span_Close Menu_icon-menu'))
-
-WebUI.click(findTestObject('Page_Pulse Zero Trust Access/button_Insights'))
-
-WebUI.click(findTestObject('Page_Pulse Zero Trust Access/a_All Users'))
-
+Runtime.runtime.exec("/Users/maitri.brahmakshatriya/Downloads/simply.py")

@@ -21,20 +21,21 @@ com.kms.katalon.core.util.internal.JsonUtil
 
 def slurper = new JsonSlurper()
 
-File jsontxt = new File('/Users/maitri.brahmakshatriya/git/Pulse_Insight/BusyUsers.json')
+		File jsontxt = new File('/Users/maitri.brahmakshatriya/git/Pulse_Insight/BusyUsers.json')
 
-def result = slurper.parse(jsontxt)
+		def result = slurper.parse(jsontxt)
 
-def user = result.tenants[0].tenant_config.users_to_applications[0].devices.count
-for (i=0;i<5;i++)
-{
-def userlist = result.tenants[0].users[i].user_name
-print(userlist)
-WebUI.openBrowser(userlist)
-}
-//WebUI.callTestCase(findTestCase('Login case'), [:], FailureHandling.STOP_ON_FAILURE)
-//
-////Print(GlobalVariable.Count)
-////WebUI.verifyMatch(user, GlobalVariable.Count)
-//WebUI.verifyMatch(user, GlobalVariable.Count, false, FailureHandling.STOP_ON_FAILURE)
+		print(result)
+	//	JsonObject obj = (result) as JSONObject
+
+		ArrayList<String> arr=new ArrayList<String>();
+		//String arr[] = new String[]
+		
+		for (int i = 0; i < result.blocks.size(); ++i) {
+				   arr[i] = result.blocks[i]
+			  }
+
+		print(arr[0])
+	
+
 

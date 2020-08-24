@@ -21,7 +21,7 @@ com.kms.katalon.core.util.internal.JsonUtil
 
 def slurper = new JsonSlurper()
 
-File jsontxt = new File('/Users/perry.gami/Downloads/config_008.json')
+File jsontxt = new File('/Users/maitri.brahmakshatriya/Downloads/config_008.json')
 
 def result = slurper.parse(jsontxt)
 

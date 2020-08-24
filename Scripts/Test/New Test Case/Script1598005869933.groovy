@@ -14,23 +14,11 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
-import org.openqa.selenium.Keys as Keys
 
-WebUI.openBrowser('')
+//driver.get('https://analytics.elm.pzt.dev.perfsec.com/admin/#/insights/users')
+WebUI.callTestCase(findTestCase('PZT/Login case'), [:], FailureHandling.STOP_ON_FAILURE)
 
-WebUI.maximizeWindow()
+CustomKeywords.'com.demo.pack.CommonKeywords.isElementPresent'()
 
-WebUI.navigateToUrl(GlobalVariable.URL)
-
-WebUI.setText(findTestObject('Page_Pulse Zero Trust Access/input_Username_username'), GlobalVariable.username)
-
-WebUI.setText(findTestObject('Page_Pulse Zero Trust Access/input_Password_password'), GlobalVariable.password)
-
-WebUI.sendKeys(findTestObject('Object Repository/Page_Pulse Zero Trust Access/input_Password_password'), Keys.chord(Keys.ENTER))
-
-WebUI.click(findTestObject('Page_Pulse Zero Trust Access/span_Close Menu_icon-menu'))
-
-WebUI.click(findTestObject('Page_Pulse Zero Trust Access/button_Insights'))
-
-WebUI.click(findTestObject('Page_Pulse Zero Trust Access/a_All Users'))
+CustomKeywords.'com.demo.pack.CommonKeywords.closeAlertAndGetItsText'()
 

@@ -19,22 +19,43 @@ import groovy.json.JsonSlurper as JsonSlurper
 
 com.kms.katalon.core.util.internal.JsonUtil
 
+WebUI.callTestCase(findTestCase('PZT/Login case'), [:], FailureHandling.STOP_ON_FAILURE)
+
+//WebDriver driver = DriverFactory.getWebDriver()
 def slurper = new JsonSlurper()
 
 File jsontxt = new File('/Users/maitri.brahmakshatriya/git/Pulse_Insight/BusyUsers.json')
 
 def result = slurper.parse(jsontxt)
 
-def user = result.tenants[0].tenant_config.users_to_applications[0].devices.count
-for (i=0;i<5;i++)
-{
-def userlist = result.tenants[0].users[i].user_name
-print(userlist)
-WebUI.openBrowser(userlist)
-}
-//WebUI.callTestCase(findTestCase('Login case'), [:], FailureHandling.STOP_ON_FAILURE)
-//
-////Print(GlobalVariable.Count)
-////WebUI.verifyMatch(user, GlobalVariable.Count)
-//WebUI.verifyMatch(user, GlobalVariable.Count, false, FailureHandling.STOP_ON_FAILURE)
+print(result)
 
+//	JsonObject obj = (result) as JSONObject
+ArrayList<String> arr = new ArrayList<String>()
+
+//String arr[] = new String[]
+for (int i = 0; i < result.size(); ++i) {
+    String css = '#topBusyHoursChart > div:nth-child(2) > svg > g > g.amcharts-Container > g.amcharts-Sprite-group.amcharts-Container-group.amcharts-Component-group.amcharts-Chart-group.amcharts-SerialChart-group.amcharts-XYChart-group > g > g:nth-child(2) > g > g > g > g:nth-child(1) > g > g:nth-child(1) > g.amcharts-Container > g:nth-child(3) > g > g > g > g.amcharts-Sprite-group.amcharts-Container-group > g > g > g > g:nth-child(' + 
+    i + ') > g > g > path'
+
+    //String css = '//div[@id="' + dynamicId + '"]'
+    myTestOject = new TestObject('customObject')
+
+    myTestOject.addProperty('css', ConditionType.EQUALS, css)
+
+    System.out.println(css)
+
+    WebUI.mouseOver(myTestOject)
+
+    Tooltip = new TestObject('customObject')
+
+    Tooltip.addProperty('css', ConditionType.EQUALS, '#topBusyHoursChart > div:nth-child(2) > svg > g > g.amcharts-Container > g:nth-child(2) > g > g:nth-child(5) > g.amcharts-Container.amcharts-Tooltip > g > g > text > tspan')
+
+    WebUI.getText(Tooltip)
+
+    Println(Tooltip)
+
+    (arr[i]) = (result.blocks[i])
+}
+
+print(arr[0])
